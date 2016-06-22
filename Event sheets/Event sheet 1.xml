@@ -9,20 +9,145 @@
                 <condition id="-2" name="On start of layout" sid="3271354119554655" type="System" />
             </conditions>
             <actions>
+                <action id="-9" name="Destroy" sid="9169315146085495" type="HP_bar" />
                 <action id="-9" name="Destroy" sid="3917176399942515" type="player" />
                 <action id="-9" name="Destroy" sid="4738205161423652" type="weapon" />
                 <action id="0" name="Call function" sid="827016331992103" type="Function">
                     <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                    <param id="1" name="Parameter {n}">87{###}83{###}65{###}68{###}81{###}69{###}200{###}0{###}1{###}0</param>
+                    <param id="1" name="Parameter {n}">87{###}83{###}65{###}68{###}81{###}69{###}200{###}0{###}1{###}1</param>
                 </action>
                 <action id="0" name="Call function" sid="7117705685634993" type="Function">
                     <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                    <param id="1" name="Parameter {n}">38{###}40{###}37{###}39{###}13{###}16{###}300{###}100{###}1{###}1</param>
+                    <param id="1" name="Parameter {n}">38{###}40{###}37{###}39{###}13{###}16{###}300{###}100{###}1{###}2</param>
                 </action>
             </actions>
         </event-block>
         <event-group bookmark="1" description="" sid="3854921868780808" title="Player Movement">
             <sub-events>
+                <comment>Ataque do player</comment>
+                <event-block sid="5164909781107398">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="6655067187402041" type="System">
+                            <param id="0" name="Object">player</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="5433636452452694" type="System">
+                            <param id="0" name="Object">body</param>
+                            <param id="1" name="Expression">player.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">body.UID</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="1550219766167287" type="System">
+                            <param id="0" name="Object">punch</param>
+                            <param id="1" name="Expression">player.custom_id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">punch.hero_id</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5896608229110183">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="9425434425673166" type="punch">
+                                    <param id="0" name="Instance variable">enable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="4446036451602115" type="punch">
+                                    <param id="0" name="Object">player</param>
+                                    <param id="1" name="Image point (optional)">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4988678871182076">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2149808181018034" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="4509541148040753" type="punch">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6244641494608993">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="7111023783031767" type="player">
+                                    <param id="0" name="Animation">&quot;Atacking2&quot;</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="5954409458483946" type="player">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2986444750817985" type="punch">
+                                    <param id="0" name="Instance variable">hero_id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">player.custom_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="6491295557381792" type="punch">
+                                    <param id="0" name="Instance variable">enable</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1237306686347306">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6969303747886743" type="System" />
+                                <condition id="2" name="Is playing" sid="7559355994415783" type="player">
+                                    <param id="0" name="Animation">&quot;Atacking3&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6095524064224121" type="punch">
+                                    <param id="0" name="Instance variable">hero_id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">player.custom_id</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="244628405169151">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="7492490314159647" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="5179611583456867" type="punch">
+                                            <param id="0" name="Instance variable">enable</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6245505026696995">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6345967241565814" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="7460493977977606" type="punch">
+                                    <param id="0" name="Instance variable">hero_id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">player.custom_id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="5891632237839205" type="punch">
+                                    <param id="0" name="Instance variable">enable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7504111791656529" type="punch">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5172859530435728">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Animações do player</comment>
                 <event-block any="1" sid="362444072690961">
                     <conditions>
                         <condition id="4" name="On finished" sid="502415875369928" type="body">
@@ -102,6 +227,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Movimentação do player</comment>
                 <event-block sid="5421661300533382">
                     <conditions>
                         <condition id="2" inverted="1" name="Is playing" sid="7259589749122113" type="body">
@@ -331,18 +457,22 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="3717156757032278">
+                        <event-block sid="1663075803875878">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                        <event-block sid="6074773513897421">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="4328247443708767" type="System">
+                                <condition id="-11" name="For Each" sid="4241516387965393" type="System">
                                     <param id="0" name="Object">player</param>
                                 </condition>
-                                <condition id="-33" name="Pick by comparison" sid="6561601942913417" type="System">
+                                <condition id="-33" name="Pick by comparison" sid="8878647694714702" type="System">
                                     <param id="0" name="Object">body</param>
                                     <param id="1" name="Expression">player.UID</param>
                                     <param id="2" name="Comparison">0</param>
                                     <param id="3" name="Value">body.UID</param>
                                 </condition>
-                                <condition id="-33" name="Pick by comparison" sid="2414389164244738" type="System">
+                                <condition id="-33" name="Pick by comparison" sid="6750040580048521" type="System">
                                     <param id="0" name="Object">punch</param>
                                     <param id="1" name="Expression">player.custom_id</param>
                                     <param id="2" name="Comparison">0</param>
@@ -351,163 +481,63 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="3185654814160961">
+                                <event-block sid="4980512118358494">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="480794212398818" type="punch">
-                                            <param id="0" name="Instance variable">enable</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-4" name="Set position to another object" sid="6122814802645569" type="punch">
-                                            <param id="0" name="Object">player</param>
-                                            <param id="1" name="Image point (optional)">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5753062833131932">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="9080999633779222" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="9844573258459851" type="punch">
-                                            <param id="0" name="X">0</param>
-                                            <param id="1" name="Y">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4750258956379235">
-                                    <conditions>
-                                        <condition id="2" inverted="1" name="Is playing" sid="2480568407564375" type="player">
+                                        <condition id="2" inverted="1" name="Is playing" sid="3060476887918725" type="player">
                                             <param id="0" name="Animation">&quot;Atacking3&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="4386360240970863">
+                                        <event-block sid="6013747769702877">
                                             <conditions>
-                                                <condition id="5" name="Key code is down" sid="3471655722796096" type="Keyboard">
+                                                <condition id="5" name="Key code is down" sid="8533593685627954" type="Keyboard">
                                                     <param id="0" name="Keycode">player.left</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="7" name="Simulate control" sid="942459782576781" type="body">
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="4869852621124506" type="body">
                                                     <param id="0" name="Control">0</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="7254720401905839" type="player">
+                                                <action id="7" name="Set mirrored" sid="5613474915425103" type="player">
                                                     <param id="0" name="State">0</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="1050048584469025" type="punch">
+                                                <action id="7" name="Set mirrored" sid="996844499942957" type="punch">
                                                     <param id="0" name="State">0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="7893576063339534">
+                                        <event-block sid="4051268446237685">
                                             <conditions>
-                                                <condition id="5" name="Key code is down" sid="4927628208999259" type="Keyboard">
+                                                <condition id="5" name="Key code is down" sid="9138877367173505" type="Keyboard">
                                                     <param id="0" name="Keycode">player.right</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="7" name="Simulate control" sid="8127706251090315" type="body">
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="14061836129669" type="body">
                                                     <param id="0" name="Control">1</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="9117800160778151" type="player">
+                                                <action id="7" name="Set mirrored" sid="2474454247560349" type="player">
                                                     <param id="0" name="State">1</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="2651673255043732" type="punch">
+                                                <action id="7" name="Set mirrored" sid="8039417503523962" type="punch">
                                                     <param id="0" name="State">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="2231653077689937">
+                                        <event-block sid="2510956679421031">
                                             <conditions>
-                                                <condition id="5" name="Key code is down" sid="1396578788473765" type="Keyboard">
+                                                <condition id="5" name="Key code is down" sid="4495738484335434" type="Keyboard">
                                                     <param id="0" name="Keycode">player.up</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="7" name="Simulate control" sid="2534850784364244" type="body">
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="679485672179883" type="body">
                                                     <param id="0" name="Control">2</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="5342562633145555">
-                                    <conditions>
-                                        <condition id="2" name="Is playing" sid="3431278170037327" type="player">
-                                            <param id="0" name="Animation">&quot;Atacking2&quot;</param>
-                                        </condition>
-                                        <condition id="3" name="Compare frame" sid="8000698067092403" type="player">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Number">2</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="1618699683480146" type="punch">
-                                            <param id="0" name="Instance variable">hero_id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">player.custom_id</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="8226972412719546" type="punch">
-                                            <param id="0" name="Instance variable">enable</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="9603060529584087">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="7342033848003326" type="System" />
-                                        <condition id="2" name="Is playing" sid="2917063139659601" type="player">
-                                            <param id="0" name="Animation">&quot;Atacking3&quot;</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="9853925428386188" type="punch">
-                                            <param id="0" name="Instance variable">hero_id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">player.custom_id</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="1903403055687674">
-                                            <conditions>
-                                                <condition id="3" name="Compare frame" sid="6409143561048709" type="player">
-                                                    <param id="0" name="Comparison">0</param>
-                                                    <param id="1" name="Number">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-13" name="Set boolean" sid="1593780050084724" type="punch">
-                                                    <param id="0" name="Instance variable">enable</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="4279992199771719">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="2355081669395437" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="3306166749236576" type="punch">
-                                            <param id="0" name="Instance variable">hero_id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">player.custom_id</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="5749518323507248" type="punch">
-                                            <param id="0" name="Instance variable">enable</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-3" name="Set position" sid="544391351508721" type="punch">
-                                            <param id="0" name="X">0</param>
-                                            <param id="1" name="Y">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5418792263442214">
-                                    <conditions />
-                                    <actions />
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -560,16 +590,39 @@
                                     <param id="2" name="Second value">2</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="4405811621340632" type="System">
-                                    <param id="0" name="Object to create">hero2</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">Function.Param(6)</param>
-                                    <param id="3" name="Y">Function.Param(7)</param>
-                                </action>
-                            </actions>
+                            <actions />
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>configurando parametros do body (genérico)</comment>
+                <event-block sid="9582238605571425">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="2581548746486374" type="body" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4323476675872987" type="body">
+                            <param id="0" name="Instance variable">team</param>
+                            <param id="1" name="Value">Function.Param(9)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7496145767182679" type="System">
+                            <param id="0" name="Object to create">HP_bar</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">body.X</param>
+                            <param id="3" name="Y">body.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7965397570579087" type="HP_bar">
+                            <param id="0" name="Instance variable">body_id</param>
+                            <param id="1" name="Value">body.UID</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="9947166679180882" type="HP_bar">
+                            <param id="0" name="Object">body</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4254876588954882" type="HP_bar">
+                            <param id="0" name="Pin to">body</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="7176947897376113">
                     <conditions>
@@ -617,17 +670,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9582238605571425">
-                    <conditions>
-                        <condition id="-18" name="On created" sid="2581548746486374" type="body" />
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="4323476675872987" type="body">
-                            <param id="0" name="Instance variable">team</param>
-                            <param id="1" name="Value">Function.Param(9)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="6932278283176702">
                     <conditions>
                         <condition id="-18" name="On created" sid="341924744941754" type="punch" />
@@ -672,10 +714,6 @@
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-                <action id="-11" name="Add to" sid="1611778537020226" type="body">
-                    <param id="0" name="Instance variable">tough</param>
-                    <param id="1" name="Value">- impact.damage</param>
                 </action>
                 <action behavior="Platform" id="1" name="Set max speed" sid="3542670907478049" type="body">
                     <param id="0" name="Max Speed">1000</param>
@@ -747,6 +785,15 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="4715452057625335">
+                    <conditions />
+                    <actions>
+                        <action id="-11" name="Add to" sid="1611778537020226" type="body">
+                            <param id="0" name="Instance variable">tough</param>
+                            <param id="1" name="Value">- impact.damage / defend</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <comment>Empurrando body</comment>
                 <event-block sid="3481980466004773">

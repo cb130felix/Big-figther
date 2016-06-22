@@ -42,9 +42,11 @@
                         <custom_id2>0</custom_id2>
                         <tough>50</tough>
                         <tough_max>50</tough_max>
-                        <HP>0</HP>
+                        <HP>100</HP>
                         <HP_Max>100</HP_Max>
                         <speed_max>220</speed_max>
+                        <MP>100</MP>
+                        <MP_Max>100</MP_Max>
                         <up>38</up>
                         <down>40</down>
                         <left>37</left>
@@ -119,74 +121,6 @@
                         <z>0</z>
                         <width>733</width>
                         <height>-30</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="hero2" uid="4">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <atacking>0</atacking>
-                        <team>0</team>
-                        <custom_id2>0</custom_id2>
-                        <tough>50</tough>
-                        <tough_max>50</tough_max>
-                        <HP>0</HP>
-                        <HP_Max>100</HP_Max>
-                        <speed_max>220</speed_max>
-                        <up>38</up>
-                        <down>40</down>
-                        <left>37</left>
-                        <right>39</right>
-                        <atack>13</atack>
-                        <def>220</def>
-                        <custom_id>0</custom_id>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Platform">
-                            <properties>
-                                <max-speed>330</max-speed>
-                                <acceleration>1500</acceleration>
-                                <deceleration>1500</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
-                                <double-jump>Disabled</double-jump>
-                                <jump-sustain>0</jump-sustain>
-                                <default-controls>No</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Flash" />
-                        <behavior-instance type="CustomMovement">
-                            <properties>
-                                <stepping-mode>None</stepping-mode>
-                                <pixels-per-step>5</pixels-per-step>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="ScrollTo">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>117</x>
-                        <y>58</y>
-                        <z>0</z>
-                        <width>100</width>
-                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -310,6 +244,34 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>1.191091895</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="HP_bar" uid="4">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <body_id>0</body_id>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>108.246383667</x>
+                        <y>62.184234619</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>20</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
