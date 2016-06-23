@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
+    <name>Template</name>
     <sid>1651033776926553</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>GameLogic</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -42,11 +42,13 @@
                         <custom_id2>0</custom_id2>
                         <tough>50</tough>
                         <tough_max>50</tough_max>
-                        <HP>100</HP>
-                        <HP_Max>100</HP_Max>
+                        <HP>250</HP>
+                        <HP_Max>250</HP_Max>
                         <speed_max>220</speed_max>
                         <MP>100</MP>
                         <MP_Max>100</MP_Max>
+                        <HP_Reg>0.5</HP_Reg>
+                        <MP_Reg>0.5</MP_Reg>
                         <up>38</up>
                         <down>40</down>
                         <left>37</left>
@@ -54,6 +56,10 @@
                         <atack>13</atack>
                         <def>220</def>
                         <custom_id>0</custom_id>
+                        <combo>nnnnnnnnnn</combo>
+                        <combo_1>afd</combo_1>
+                        <moved>0</moved>
+                        <mana_cost_1>10</mana_cost_1>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -78,6 +84,7 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Timer" />
                         <behavior-instance type="ScrollTo">
                             <properties>
                                 <initial-state>Enabled</initial-state>
@@ -90,11 +97,11 @@
                         <x>46</x>
                         <y>60</y>
                         <z>0</z>
-                        <width>100</width>
-                        <height>100</height>
+                        <width>80.800003052</width>
+                        <height>80.800003052</height>
                         <depth>0</depth>
-                        <hotspotX>0.456</hotspotX>
-                        <hotspotY>0.504000008</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -177,11 +184,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>233</x>
-                        <y>52</y>
+                        <x>250.08001709</x>
+                        <y>65.176002502</y>
                         <z>0</z>
-                        <width>31</width>
-                        <height>37</height>
+                        <width>66</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.488000005</hotspotX>
                         <hotspotY>0.488000005</hotspotY>
@@ -235,11 +242,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1007</x>
-                        <y>352</y>
+                        <x>1015.352416992</x>
+                        <y>354.02835083</y>
                         <z>0</z>
-                        <width>37</width>
-                        <height>-340</height>
+                        <width>31</width>
+                        <height>-339</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -256,6 +263,7 @@
                     </properties>
                     <instance-variables>
                         <body_id>0</body_id>
+                        <max_width>20</max_width>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -267,7 +275,173 @@
                         <y>62.184234619</y>
                         <z>0</z>
                         <width>20</width>
-                        <height>20</height>
+                        <height>15</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="game_floor" uid="11">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>679.5</x>
+                        <y>334</y>
+                        <z>0</z>
+                        <width>55</width>
+                        <height>13</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="game_floor" uid="12">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>370</x>
+                        <y>202</y>
+                        <z>0</z>
+                        <width>168</width>
+                        <height>-8</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MP_bar" uid="13">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <body_id>0</body_id>
+                        <max_width>20</max_width>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>108</x>
+                        <y>72</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>15</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Debug" uid="26">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>Window left</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>30</x>
+                        <y>21</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="EnergyBall" uid="27">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <body_team>0</body_team>
+                        <enable>true</enable>
+                        <damage>30</damage>
+                        <push>30</push>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>112</x>
+                        <y>-11</y>
+                        <z>0</z>
+                        <width>75</width>
+                        <height>75</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
