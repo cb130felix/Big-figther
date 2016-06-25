@@ -12,10 +12,14 @@
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+        <plugin author="Scirra.com" id="win8" version="1">Windows 8</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
@@ -23,13 +27,17 @@
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="warp">Warp</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -56,722 +64,1102 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="hero1" sid="7348573088710676">
-            <plugin id="Sprite" />
-            <container>
-                <type>hero1</type>
-                <type>key_combo</type>
-                <type>punch</type>
-            </container>
-            <animation-folder>
-                <animation framecount="2" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="3923911779632451" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.58911" y="-0.252475" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
-                        <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.529703" y="0.628713" />
-                        <image-point name="HUD" x="0.490099" y="0.0841584" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="7854221341711655" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.519802" y="0.653465" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.539604" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="1" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="5205163196155976" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.623762" y="0.633663" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Atacking5" pingpong="0" repeatcount="1" repeatto="0" sid="4554029357069469" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.628" y="0.32" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.684" y="0.416" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.628" y="0.596" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="4" loop="0" name="Atacking4" pingpong="0" repeatcount="1" repeatto="0" sid="7627642787327125" speed="15">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.388" y="0.476" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.472" y="0.568" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.628" y="0.54" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.708" y="0.512" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Atacking2" pingpong="0" repeatcount="1" repeatto="0" sid="3374797764013824" speed="15">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.59901" y="0.643564" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.727723" y="0.866337" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.960396" y="0.712871" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="4" loop="0" name="Atacking1" pingpong="0" repeatcount="1" repeatto="0" sid="6144991995648252" speed="15">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.588" y="0.628" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.724" y="0.476" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.592" y="0.636" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.492" y="0.628" />
-                        <image-point name="HUD" x="0.492" y="0.084" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="0" name="Damage1" pingpong="0" repeatcount="1" repeatto="0" sid="2978218309480142" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="0" name="Damage2" pingpong="0" repeatcount="1" repeatto="0" sid="1462245260797023" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="6" loop="0" name="Damage3" pingpong="0" repeatcount="1" repeatto="0" sid="3090285012859107" speed="2">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Falling" pingpong="0" repeatcount="1" repeatto="0" sid="6393842594561113" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.544554" y="0.108911" />
-                            <point x="0.544554" y="0.930693" />
-                            <point x="0.29703" y="0.935643" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="0" name="GetUp" pingpong="0" repeatcount="1" repeatto="0" sid="1949427088282412" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Atacking3" pingpong="1" repeatcount="1" repeatto="0" sid="8193684928501681" speed="20">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.608911" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.826733" y="0.391089" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.06436" y="0.391089" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="0" name="Defend" pingpong="0" repeatcount="1" repeatto="0" sid="3193420321018597" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="1" name="Running" pingpong="1" repeatcount="1" repeatto="0" sid="575873781021905" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.519802" y="0.653465" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.519802" y="0.653465" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.519802" y="0.653465" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="0" name="RunningAtack" pingpong="1" repeatcount="1" repeatto="0" sid="8502910049428991" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.811881" y="0.980198" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="1" name="OnWall" pingpong="1" repeatcount="1" repeatto="0" sid="9758663539193256" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.19307" y="-0.415842" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="0.534653" y="0.658416" />
-                        <image-point name="HUD" x="0.490099" y="-0.0148515" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="6" loop="0" name="Special1" pingpong="0" repeatcount="1" repeatto="0" sid="5434794181155514" speed="15">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="hand" x="1.4703" y="-0.168317" />
-                        <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
-                        <image-point name="HUD_MP" x="0.490099" y="0.039604" />
-                        <image-point name="Energy" x="0.668317" y="0.485149" />
-                        <collision-poly>
-                            <point x="0.29703" y="0.108911" />
-                            <point x="0.549505" y="0.108911" />
-                            <point x="0.549505" y="0.975248" />
-                            <point x="0.29703" y="0.975248" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="game_floor" sid="235504465713014">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="9455384221229619">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8060269183638417" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Keyboard" sid="8201680098201287">
-            <plugin id="Keyboard" />
-        </object-type>
-        <object-type name="Function" sid="4071346877698941">
-            <plugin id="Function" />
-        </object-type>
-        <object-type name="punch" sid="5493218878543585">
-            <plugin id="Sprite" />
-            <container>
-                <type>hero1</type>
-                <type>key_combo</type>
-                <type>punch</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2139056807984879" speed="5">
-                    <frame duration="1" hotspotX="0.488" hotspotY="0.488">
-                        <collision-poly>
-                            <point x="0.396" y="0.396" />
-                            <point x="0.5" y="0.396" />
-                            <point x="0.584" y="0.416" />
-                            <point x="0.584" y="0.584" />
-                            <point x="0.416" y="0.584" />
-                            <point x="0.396" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Audio" sid="2416536727592473">
-            <plugin id="Audio" />
-        </object-type>
-        <object-type global="1" name="key_combo" sid="1168049810490249">
-            <plugin id="Arr" />
-            <instance-variables>
-                <instance-variable name="hero_id" sid="9428891553989428" type="number" />
-            </instance-variables>
-            <container>
-                <type>hero1</type>
-                <type>key_combo</type>
-                <type>punch</type>
-            </container>
-        </object-type>
-        <object-type name="HP_bar" sid="7370694159011374">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="body_id" sid="8472616460274381" type="number" />
-                <instance-variable name="max_width" sid="6332264921165906" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Pin" sid="225879474461653">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6109249315995578" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="MP_bar" sid="7665433877399699">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="body_id" sid="576502284829013" type="number" />
-                <instance-variable name="max_width" sid="170455122634492" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Pin" sid="9823905814777003">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3425739900031331" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Debug" sid="4779861618032895">
-            <plugin id="Text" />
-            <behaviors>
-                <behavior-type name="Anchor" sid="9168203092199469">
-                    <behavior id="Anchor" />
-                </behavior-type>
-            </behaviors>
-        </object-type>
-        <object-type name="EnergyBall" sid="8693143293733558">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="472818382454253">
-                    <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="DestroyOutsideLayout" sid="2166243905754405">
-                    <behavior id="destroy" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1512784684423271" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.432" y="0.432" />
-                            <point x="0.5" y="0.42" />
-                            <point x="0.568" y="0.432" />
-                            <point x="0.636" y="0.5" />
-                            <point x="0.596" y="0.596" />
-                            <point x="0.5" y="0.616" />
-                            <point x="0.396" y="0.604" />
-                            <point x="0.252" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.432" y="0.432" />
-                            <point x="0.5" y="0.42" />
-                            <point x="0.568" y="0.432" />
-                            <point x="0.636" y="0.5" />
-                            <point x="0.596" y="0.596" />
-                            <point x="0.5" y="0.616" />
-                            <point x="0.396" y="0.604" />
-                            <point x="0.252" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="1" name="DefaultLeft" pingpong="0" repeatcount="1" repeatto="0" sid="8264230480342276" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.568" y="0.568" />
-                            <point x="0.5" y="0.58" />
-                            <point x="0.432" y="0.568" />
-                            <point x="0.364" y="0.5" />
-                            <point x="0.404" y="0.404" />
-                            <point x="0.5" y="0.384" />
-                            <point x="0.604" y="0.396" />
-                            <point x="0.748" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.568" y="0.568" />
-                            <point x="0.5" y="0.58" />
-                            <point x="0.432" y="0.568" />
-                            <point x="0.364" y="0.5" />
-                            <point x="0.404" y="0.404" />
-                            <point x="0.5" y="0.384" />
-                            <point x="0.604" y="0.396" />
-                            <point x="0.748" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder name="HUD">
+            <object-type name="HP_bar" sid="7370694159011374">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="body_id" sid="8472616460274381" type="number" />
+                    <instance-variable name="max_width" sid="6332264921165906" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="225879474461653">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6109249315995578" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MP_bar" sid="7665433877399699">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="body_id" sid="576502284829013" type="number" />
+                    <instance-variable name="max_width" sid="170455122634492" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="9823905814777003">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3425739900031331" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Game">
+            <object-folder name="Hero1">
+                <object-type name="hero1" sid="7348573088710676">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>hero1</type>
+                        <type>key_combo</type>
+                        <type>punch</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="3923911779632451" speed="3">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.58911" y="-0.252475" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.529703" y="0.628713" />
+                                <image-point name="HUD" x="0.490099" y="0.0841584" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="7854221341711655" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.519802" y="0.653465" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.539604" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="1" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="5205163196155976" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.623762" y="0.633663" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="0" name="Atacking5" pingpong="0" repeatcount="1" repeatto="0" sid="4554029357069469" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.628" y="0.32" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.684" y="0.416" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.628" y="0.596" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="Atacking4" pingpong="0" repeatcount="1" repeatto="0" sid="7627642787327125" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.388" y="0.476" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.472" y="0.568" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.628" y="0.54" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.708" y="0.512" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="0" name="Atacking2" pingpong="0" repeatcount="1" repeatto="0" sid="3374797764013824" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.59901" y="0.643564" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.727723" y="0.866337" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.960396" y="0.712871" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="Atacking1" pingpong="0" repeatcount="1" repeatto="0" sid="6144991995648252" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.588" y="0.628" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.724" y="0.476" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.592" y="0.636" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.492" y="0.628" />
+                                <image-point name="HUD" x="0.492" y="0.084" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Damage1" pingpong="0" repeatcount="1" repeatto="0" sid="2978218309480142" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Damage2" pingpong="0" repeatcount="1" repeatto="0" sid="1462245260797023" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="6" loop="0" name="Damage3" pingpong="0" repeatcount="1" repeatto="0" sid="3090285012859107" speed="2">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Falling" pingpong="0" repeatcount="1" repeatto="0" sid="6393842594561113" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.0940595" y="0.425742" />
+                                    <point x="0.925743" y="0.425743" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="GetUp" pingpong="0" repeatcount="1" repeatto="0" sid="1949427088282412" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="0" name="Atacking3" pingpong="1" repeatcount="1" repeatto="0" sid="8193684928501681" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.608911" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.826733" y="0.391089" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.06436" y="0.391089" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Defend" pingpong="0" repeatcount="1" repeatto="0" sid="3193420321018597" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="1" name="Running" pingpong="1" repeatcount="1" repeatto="0" sid="575873781021905" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.519802" y="0.653465" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.519802" y="0.653465" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.519802" y="0.653465" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="RunningAtack" pingpong="1" repeatcount="1" repeatto="0" sid="8502910049428991" speed="3">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.811881" y="0.980198" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.549505" />
+                                    <point x="0.663366" y="0.549505" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="OnWall" pingpong="1" repeatcount="1" repeatto="0" sid="9758663539193256" speed="3">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="-0.193069" y="-0.415842" />
+                                <image-point name="HUD" x="0.509901" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="6" loop="0" name="Special1" pingpong="0" repeatcount="1" repeatto="0" sid="5434794181155514" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="1.4703" y="-0.168317" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <image-point name="Energy" x="0.668317" y="0.485149" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="8" loop="0" name="Special2" pingpong="0" repeatcount="1" repeatto="0" sid="4709319904788843" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.886139" y="0.707921" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.133663" y="0.69802" />
+                                <image-point name="HUD_HP" x="0.509901" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.509901" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.668317" y="0.975248" />
+                                    <point x="0.336634" y="0.980198" />
+                                    <point x="0.336634" y="0.108911" />
+                                    <point x="0.668317" y="0.108911" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.856436" y="0.693069" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.123762" y="0.707921" />
+                                <image-point name="HUD_HP" x="0.509901" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.509901" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.668317" y="0.975248" />
+                                    <point x="0.336634" y="0.980198" />
+                                    <point x="0.336634" y="0.108911" />
+                                    <point x="0.668317" y="0.108911" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.836634" y="0.712871" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.138614" y="0.722772" />
+                                <image-point name="HUD_HP" x="0.509901" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.509901" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.668317" y="0.975248" />
+                                    <point x="0.336634" y="0.980198" />
+                                    <point x="0.336634" y="0.108911" />
+                                    <point x="0.668317" y="0.108911" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.856436" y="0.717822" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.153465" y="0.712871" />
+                                <image-point name="HUD_HP" x="0.509901" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.509901" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.668317" y="0.975248" />
+                                    <point x="0.336634" y="0.980198" />
+                                    <point x="0.336634" y="0.108911" />
+                                    <point x="0.668317" y="0.108911" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="PassedOut" pingpong="0" repeatcount="1" repeatto="0" sid="6662461885849193" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="15" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.534653" y="0.658416" />
+                                <image-point name="HUD" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Special3" pingpong="0" repeatcount="1" repeatto="0" sid="3119464231167565" speed="2">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.905941" y="0.460396" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0148515" />
+                                <image-point name="HUD_MP" x="0.490099" y="0.039604" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="9" loop="0" name="Special4" pingpong="0" repeatcount="1" repeatto="0" sid="4739461471856336" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.920792" y="0.757426" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.846535" y="0.410891" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.836634" y="0.0594059" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.450495" y="0.0594059" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.049505" y="0.430693" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.0841584" y="0.787129" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.178218" y="0.985148" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.178218" y="0.985148" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="hand" x="0.178218" y="0.985148" />
+                                <image-point name="HUD_HP" x="0.490099" y="-0.0792079" />
+                                <image-point name="HUD_MP" x="0.490099" y="-0.0148515" />
+                                <collision-poly>
+                                    <point x="0.331683" y="0.108911" />
+                                    <point x="0.663366" y="0.108911" />
+                                    <point x="0.663366" y="0.980198" />
+                                    <point x="0.331683" y="0.975248" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnergyBall" sid="8693143293733558">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="472818382454253">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="DestroyOutsideLayout" sid="2166243905754405">
+                            <behavior id="destroy" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1512784684423271" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.432" y="0.432" />
+                                    <point x="0.5" y="0.42" />
+                                    <point x="0.568" y="0.432" />
+                                    <point x="0.636" y="0.5" />
+                                    <point x="0.596" y="0.596" />
+                                    <point x="0.5" y="0.616" />
+                                    <point x="0.396" y="0.604" />
+                                    <point x="0.252" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.432" y="0.432" />
+                                    <point x="0.5" y="0.42" />
+                                    <point x="0.568" y="0.432" />
+                                    <point x="0.636" y="0.5" />
+                                    <point x="0.596" y="0.596" />
+                                    <point x="0.5" y="0.616" />
+                                    <point x="0.396" y="0.604" />
+                                    <point x="0.252" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="DefaultLeft" pingpong="0" repeatcount="1" repeatto="0" sid="8264230480342276" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.568" y="0.568" />
+                                    <point x="0.5" y="0.58" />
+                                    <point x="0.432" y="0.568" />
+                                    <point x="0.364" y="0.5" />
+                                    <point x="0.404" y="0.404" />
+                                    <point x="0.5" y="0.384" />
+                                    <point x="0.604" y="0.396" />
+                                    <point x="0.748" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.568" y="0.568" />
+                                    <point x="0.5" y="0.58" />
+                                    <point x="0.432" y="0.568" />
+                                    <point x="0.364" y="0.5" />
+                                    <point x="0.404" y="0.404" />
+                                    <point x="0.5" y="0.384" />
+                                    <point x="0.604" y="0.396" />
+                                    <point x="0.748" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="kick" sid="1720360291964329">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="8634172576708247">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="891762028486105" speed="10">
+                            <frame duration="1" hotspotX="0.552" hotspotY="0.516">
+                                <collision-poly>
+                                    <point x="0.38" y="0.176" />
+                                    <point x="0.632" y="0.228" />
+                                    <point x="0.748" y="0.544" />
+                                    <point x="0.678" y="0.768" />
+                                    <point x="0.388" y="0.864" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="chargedPunch" sid="1299546516659577">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="2473097730688832">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3717071136801819" speed="10">
+                            <frame duration="1" hotspotX="0.552" hotspotY="0.516">
+                                <collision-poly>
+                                    <point x="0.38" y="0.176" />
+                                    <point x="0.632" y="0.228" />
+                                    <point x="0.748" y="0.544" />
+                                    <point x="0.678" y="0.768" />
+                                    <point x="0.388" y="0.864" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.552" hotspotY="0.516">
+                                <collision-poly>
+                                    <point x="0.38" y="0.176" />
+                                    <point x="0.632" y="0.228" />
+                                    <point x="0.748" y="0.544" />
+                                    <point x="0.678" y="0.768" />
+                                    <point x="0.388" y="0.864" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="8" loop="0" name="Kick" pingpong="0" repeatcount="1" repeatto="0" sid="5314672567531043" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.316" y="0.224" />
+                                    <point x="0.832" y="0.236" />
+                                    <point x="0.904" y="0.66" />
+                                    <point x="0.55" y="0.94" />
+                                    <point x="0.528" y="0.472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.316" y="0.224" />
+                                    <point x="0.772" y="0.084" />
+                                    <point x="0.896" y="0.488" />
+                                    <point x="0.586" y="0.828" />
+                                    <point x="0.528" y="0.472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.316" y="0.224" />
+                                    <point x="0.668" y="0" />
+                                    <point x="0.908" y="0.352" />
+                                    <point x="0.586" y="0.828" />
+                                    <point x="0.528" y="0.472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.232" y="0.168" />
+                                    <point x="0.904" y="0.076" />
+                                    <point x="0.904" y="0.708" />
+                                    <point x="0.128" y="0.836" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.112" y="0.104" />
+                                    <point x="0.808" y="0.176" />
+                                    <point x="0.812" y="0.836" />
+                                    <point x="0.084" y="0.868" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.088" y="0.304" />
+                                    <point x="0.712" y="0.268" />
+                                    <point x="0.8" y="0.876" />
+                                    <point x="0.04" y="0.832" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.052" y="0.496" />
+                                    <point x="0.644" y="0.332" />
+                                    <point x="0.536" y="0.924" />
+                                    <point x="0.024" y="0.992" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.052" y="0.496" />
+                                    <point x="0.644" y="0.332" />
+                                    <point x="0.536" y="0.924" />
+                                    <point x="0.024" y="0.992" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-type name="game_floor" sid="235504465713014">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="9455384221229619">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8060269183638417" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="key_combo" sid="1168049810490249">
+                <plugin id="Arr" />
+                <instance-variables>
+                    <instance-variable name="hero_id" sid="9428891553989428" type="number" />
+                </instance-variables>
+                <container>
+                    <type>hero1</type>
+                    <type>key_combo</type>
+                    <type>punch</type>
+                </container>
+            </object-type>
+            <object-type name="punch" sid="5493218878543585">
+                <plugin id="Sprite" />
+                <container>
+                    <type>hero1</type>
+                    <type>key_combo</type>
+                    <type>punch</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2139056807984879" speed="5">
+                        <frame duration="1" hotspotX="0.488" hotspotY="0.488">
+                            <collision-poly>
+                                <point x="0.396" y="0.396" />
+                                <point x="0.5" y="0.396" />
+                                <point x="0.584" y="0.416" />
+                                <point x="0.584" y="0.584" />
+                                <point x="0.416" y="0.584" />
+                                <point x="0.396" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="game_floor2" sid="7205018411556328">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Jumpthru" sid="8724156754909273">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296875163035835" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Others">
+            <object-type name="Debug" sid="4779861618032895">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="9168203092199469">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="Audio" sid="2416536727592473">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Function" sid="4071346877698941">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Keyboard" sid="8201680098201287">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Windows8" sid="3726576749401916">
+                <plugin id="win8" />
+            </object-type>
+            <object-type name="Gamepad" sid="9898841633229509">
+                <plugin id="gamepad" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Menu">
+            <object-type name="logo1" sid="3190482891096237">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="5904710439038522">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8216292632651974" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="logo2" sid="1135365122519739">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Warp">
+                        <effect id="warp" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6117362810786599" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="List" sid="6872898656623105">
+                <plugin id="List" />
+            </object-type>
+            <object-type name="Text" sid="7359940816344131">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Start" sid="4647323972572296">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
     </object-folder>
     <families>
         <family name="body" plugin-id="Sprite" sid="2642391786480005">
@@ -823,6 +1211,12 @@
                 <instance-variable name="combo_1" sid="7662893417937609" type="string" />
                 <instance-variable comment="1 if the player moved the last sec, 0 otherwise" name="moved" sid="4299289343441339" type="number" />
                 <instance-variable name="mana_cost_1" sid="6756001670416605" type="number" />
+                <instance-variable name="combo_2" sid="9654681640945045" type="string" />
+                <instance-variable name="mana_cost_2" sid="9609823360806783" type="number" />
+                <instance-variable name="combo_3" sid="4374023541017516" type="string" />
+                <instance-variable name="mana_cost_3" sid="5492076737312658" type="number" />
+                <instance-variable name="combo_4" sid="934654317785429" type="string" />
+                <instance-variable name="mana_cost_4" sid="3162234305337867" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="7807591328899371">
@@ -845,7 +1239,9 @@
         </family>
         <family name="impact" plugin-id="Sprite" sid="5983024672560174">
             <members>
+                <member>chargedPunch</member>
                 <member>EnergyBall</member>
+                <member>kick</member>
                 <member>punch</member>
             </members>
             <instance-variables>
@@ -853,15 +1249,19 @@
                 <instance-variable name="enable" sid="2185889907348905" type="boolean" />
                 <instance-variable name="damage" sid="7526004866042708" type="number" />
                 <instance-variable name="push" sid="9366159524946606" type="number" />
+                <instance-variable name="body_id" sid="1811681002978952" type="number" />
+                <instance-variable name="push_up" sid="5097560915935661" type="number" />
             </instance-variables>
         </family>
     </families>
     <layout-folder>
         <layout>Template.xml</layout>
         <layout>Arena.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>GameLogic.xml</event-sheet>
+        <event-sheet>Menu.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
@@ -878,6 +1278,19 @@
                 <reference-distance>600</reference-distance>
                 <maximum-distance>10000</maximum-distance>
                 <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Windows8" uid="48">
+            <properties>
+                <test-mode>Yes</test-mode>
+                <about-setting>Yes</about-setting>
+                <support-setting>Yes</support-setting>
+                <privacy-setting>Yes</privacy-setting>
+            </properties>
+        </global-instance>
+        <global-instance type="Gamepad" uid="50">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
     </global-instances>
@@ -897,6 +1310,9 @@
         <file name="throw.ogg" />
         <file name="punch.ogg" />
         <file name="dash.ogg" />
+        <file name="energy.ogg" />
+        <file name="energy2.ogg" />
+        <file name="land.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>
