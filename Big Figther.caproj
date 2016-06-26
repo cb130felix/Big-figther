@@ -13,11 +13,15 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
         <plugin author="Scirra.com" id="win8" version="1">Windows 8</plugin>
     </used-plugins>
@@ -47,6 +51,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -64,42 +69,6 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-folder name="HUD">
-            <object-type name="HP_bar" sid="7370694159011374">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="body_id" sid="8472616460274381" type="number" />
-                    <instance-variable name="max_width" sid="6332264921165906" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Pin" sid="225879474461653">
-                        <behavior id="Pin" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6109249315995578" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="MP_bar" sid="7665433877399699">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="body_id" sid="576502284829013" type="number" />
-                    <instance-variable name="max_width" sid="170455122634492" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Pin" sid="9823905814777003">
-                        <behavior id="Pin" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3425739900031331" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-        </object-folder>
         <object-folder name="Game">
             <object-folder name="Hero1">
                 <object-type name="hero1" sid="7348573088710676">
@@ -1038,6 +1007,50 @@
                     </animation-folder>
                 </object-type>
             </object-folder>
+            <object-folder name="HUD">
+                <object-type name="HP_bar" sid="7370694159011374">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="body_id" sid="8472616460274381" type="number" />
+                        <instance-variable name="max_width" sid="6332264921165906" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="225879474461653">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6109249315995578" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="MP_bar" sid="7665433877399699">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="body_id" sid="576502284829013" type="number" />
+                        <instance-variable name="max_width" sid="170455122634492" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="9823905814777003">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3425739900031331" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="PlayerTag" sid="6392787337729237">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="5283383400893239">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+            </object-folder>
             <object-type name="game_floor" sid="235504465713014">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -1122,6 +1135,21 @@
             <object-type name="Gamepad" sid="9898841633229509">
                 <plugin id="gamepad" />
             </object-type>
+            <object-type name="Text" sid="7359940816344131">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="key" sid="7897851663860538" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="LocalStorage" sid="5136564777000378">
+                <plugin id="LocalStorage" />
+            </object-type>
+            <object-type global="1" name="XML" sid="7830734622069248">
+                <plugin id="XML" />
+            </object-type>
+            <object-type global="1" name="Dictionary" sid="4047316531185156">
+                <plugin id="Dictionary" />
+            </object-type>
         </object-folder>
         <object-folder name="Menu">
             <object-type name="logo1" sid="3190482891096237">
@@ -1150,16 +1178,78 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="List" sid="6872898656623105">
-                <plugin id="List" />
-            </object-type>
-            <object-type name="Text" sid="7359940816344131">
-                <plugin id="Text" />
-            </object-type>
             <object-type name="Start" sid="4647323972572296">
                 <plugin id="Button" />
             </object-type>
+            <object-type name="ControlSetupButton" sid="9910769105452446">
+                <plugin id="Button" />
+            </object-type>
         </object-folder>
+        <object-folder name="ControlSetup">
+            <object-type name="Control" sid="7525811480876445">
+                <plugin id="TextBox" />
+                <instance-variables>
+                    <instance-variable name="key" sid="1949318840492395" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="Text2" sid="6360969613868781">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="key" sid="6800893632891316" type="string" />
+                </instance-variables>
+            </object-type>
+            <object-type name="Button" sid="5944479669808639">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="PlayerList" sid="3197708251383609">
+                <plugin id="List" />
+            </object-type>
+            <object-type name="Sprite" sid="2052943114083824">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4469526254097278" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MenuButton" sid="5391555142005634">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
+        <object-folder name="SelectPlayer">
+            <object-type name="PlayerNumber" sid="6872898656623105">
+                <plugin id="List" />
+            </object-type>
+            <object-type name="PlayerSelect" sid="961964449051356">
+                <plugin id="List" />
+                <instance-variables>
+                    <instance-variable name="id" sid="4493906463552038" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="Stage" sid="3203356028530528">
+                <plugin id="List" />
+            </object-type>
+            <object-type name="TeamSelect" sid="9512035782882411">
+                <plugin id="List" />
+                <instance-variables>
+                    <instance-variable name="id" sid="8526492613996134" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="Play" sid="3734524703868747">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="ChooseUHero" sid="6080558110931192">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3380560634704841" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="TextBox" sid="8347664604826509">
+            <plugin id="TextBox" />
+        </object-type>
     </object-folder>
     <families>
         <family name="body" plugin-id="Sprite" sid="2642391786480005">
@@ -1255,13 +1345,17 @@
         </family>
     </families>
     <layout-folder>
+        <layout>Menu.xml</layout>
         <layout>Template.xml</layout>
         <layout>Arena.xml</layout>
-        <layout>Menu.xml</layout>
+        <layout>ControlSetup.xml</layout>
+        <layout>SelectPlayer.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>GameLogic.xml</event-sheet>
         <event-sheet>Menu.xml</event-sheet>
+        <event-sheet>ControlSetup.xml</event-sheet>
+        <event-sheet>SelectPlayer.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
@@ -1293,6 +1387,7 @@
                 <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
+        <global-instance type="LocalStorage" uid="59" />
     </global-instances>
     <sounds-folder>
         <file name="Collect_02.ogg" />

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SelectPlayer</name>
+    <events>
+        <event-block sid="6789809687447384">
+            <conditions>
+                <condition id="0" name="On clicked" sid="8075044435519304" type="Play" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5544962978358495">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="3235616427123053" type="System">
+                            <param id="0" name="Object">PlayerSelect</param>
+                            <param id="1" name="Expression">PlayerSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="2910812259002086" type="Dictionary">
+                            <param id="0" name="Key">&quot;p1_hero&quot;</param>
+                            <param id="1" name="Value">PlayerSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4183834390442895">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4739257942797312" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="9626145971069795" type="Dictionary">
+                            <param id="0" name="Key">&quot;p1_team&quot;</param>
+                            <param id="1" name="Value">TeamSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7622328892801128">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="949773708297628" type="System">
+                            <param id="0" name="Object">PlayerSelect</param>
+                            <param id="1" name="Expression">PlayerSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="9889208843828272" type="Dictionary">
+                            <param id="0" name="Key">&quot;p2_hero&quot;</param>
+                            <param id="1" name="Value">PlayerSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3379015820114118">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="1581374821645033" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="1787487239318637" type="Dictionary">
+                            <param id="0" name="Key">&quot;p2_team&quot;</param>
+                            <param id="1" name="Value">TeamSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1848457393287067">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="5582964261152613" type="System">
+                            <param id="0" name="Object">PlayerSelect</param>
+                            <param id="1" name="Expression">PlayerSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="6460470969232816" type="Dictionary">
+                            <param id="0" name="Key">&quot;p3_hero&quot;</param>
+                            <param id="1" name="Value">PlayerSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="237448115897611">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="7406548968334261" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="6093259372304408" type="Dictionary">
+                            <param id="0" name="Key">&quot;p3_team&quot;</param>
+                            <param id="1" name="Value">TeamSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7636910584730021">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="2705813246633118" type="System">
+                            <param id="0" name="Object">PlayerSelect</param>
+                            <param id="1" name="Expression">PlayerSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="5991406169939708" type="Dictionary">
+                            <param id="0" name="Key">&quot;p4_hero&quot;</param>
+                            <param id="1" name="Value">PlayerSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7146942727786786">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="9980814292466506" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="2347486608845493" type="Dictionary">
+                            <param id="0" name="Key">&quot;p4_team&quot;</param>
+                            <param id="1" name="Value">TeamSelect.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8755316749312268">
+                    <conditions />
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="411036446070612" type="System">
+                            <param id="0" name="Layout">Stage.SelectedText</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7341519088587196">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6834066042521838" type="MenuButton" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9213243948969932" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6115195904864259">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4074865430549109" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5115627274699686">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="6026535768868748">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="2485356508540942" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="4209716144943165" type="TeamSelect">
+                            <param id="0" name="Index">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6142097972312221">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="463287427371905" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="4242811689706947" type="TeamSelect">
+                            <param id="0" name="Index">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4794639100246349">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="7786403573967819" type="System">
+                            <param id="0" name="Object">TeamSelect</param>
+                            <param id="1" name="Expression">TeamSelect.id</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="9432143709627213" type="TeamSelect">
+                            <param id="0" name="Index">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

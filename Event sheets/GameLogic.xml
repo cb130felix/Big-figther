@@ -18,19 +18,27 @@
                         <action id="-9" name="Destroy" sid="582487185873534" type="impact" />
                         <action id="0" name="Call function" sid="827016331992103" type="Function">
                             <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                            <param id="1" name="Parameter {n}">87{###}83{###}65{###}68{###}81{###}69{###}200{###}200{###}1{###}1</param>
+                            <param id="1" name="Parameter {n}">Dictionary.Get(&quot;keyboard_1_5&quot;){###}Dictionary.Get(&quot;keyboard_1_1&quot;){###}Dictionary.Get(&quot;keyboard_1_2&quot;){###}Dictionary.Get(&quot;keyboard_1_3&quot;){###}Dictionary.Get(&quot;keyboard_1_4&quot;){###}Dictionary.Get(&quot;keyboard_1_6&quot;){###}200{###}200{###}Dictionary.Get(&quot;p1_hero&quot;){###}Dictionary.Get(&quot;p1_team&quot;)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1513841695579166" type="Function">
+                            <param id="0" name="Name">&quot;newPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}">Dictionary.Get(&quot;keyboard_2_5&quot;){###}Dictionary.Get(&quot;keyboard_2_1&quot;){###}Dictionary.Get(&quot;keyboard_2_2&quot;){###}Dictionary.Get(&quot;keyboard_2_3&quot;){###}Dictionary.Get(&quot;keyboard_2_4&quot;){###}Dictionary.Get(&quot;keyboard_2_6&quot;){###}200{###}200{###}Dictionary.Get(&quot;p2_hero&quot;){###}Dictionary.Get(&quot;p2_team&quot;)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5937868594450165" type="Function">
+                            <param id="0" name="Name">&quot;newPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}">Dictionary.Get(&quot;keyboard_3_5&quot;){###}Dictionary.Get(&quot;keyboard_3_1&quot;){###}Dictionary.Get(&quot;keyboard_3_2&quot;){###}Dictionary.Get(&quot;keyboard_3_3&quot;){###}Dictionary.Get(&quot;keyboard_3_4&quot;){###}Dictionary.Get(&quot;keyboard_3_6&quot;){###}200{###}200{###}Dictionary.Get(&quot;p3_hero&quot;){###}Dictionary.Get(&quot;p3_team&quot;)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6577420489144417" type="Function">
+                            <param id="0" name="Name">&quot;newPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}">Dictionary.Get(&quot;keyboard_4_5&quot;){###}Dictionary.Get(&quot;keyboard_4_1&quot;){###}Dictionary.Get(&quot;keyboard_4_2&quot;){###}Dictionary.Get(&quot;keyboard_4_3&quot;){###}Dictionary.Get(&quot;keyboard_4_4&quot;){###}Dictionary.Get(&quot;keyboard_4_6&quot;){###}200{###}200{###}Dictionary.Get(&quot;p4_hero&quot;){###}Dictionary.Get(&quot;p4_team&quot;)</param>
                         </action>
                         <action disabled="1" id="0" name="Call function" sid="8214120629789714" type="Function">
                             <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                            <param id="1" name="Parameter {n}">87{###}83{###}65{###}68{###}81{###}69{###}700{###}0{###}1{###}1</param>
+                            <param id="1" name="Parameter {n}">87{###}83{###}65{###}68{###}81{###}69{###}700{###}0{###}Dictionary.Get(&quot;p2_hero&quot;){###}1</param>
                         </action>
-                        <action id="0" name="Call function" sid="7117705685634993" type="Function">
+                        <action disabled="1" id="0" name="Call function" sid="7117705685634993" type="Function">
                             <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                            <param id="1" name="Parameter {n}">38{###}40{###}37{###}39{###}13{###}16{###}300{###}100{###}1{###}2</param>
-                        </action>
-                        <action disabled="1" id="0" name="Call function" sid="1588532613546406" type="Function">
-                            <param id="0" name="Name">&quot;newPlayer&quot;</param>
-                            <param id="1" name="Parameter {n}">38{###}40{###}37{###}39{###}13{###}16{###}500{###}100{###}1{###}2</param>
+                            <param id="1" name="Parameter {n}">38{###}40{###}37{###}39{###}13{###}16{###}300{###}100{###}Dictionary.Get(&quot;p3_hero&quot;){###}2</param>
                         </action>
                         <action id="-17" name="Set layer scale" sid="8946353139042291" type="System">
                             <param id="0" name="Layer">0</param>
@@ -1423,7 +1431,7 @@
                 </event-group>
                 <event-group bookmark="1" description="" sid="6915365979793938" title="Player/Body generator">
                     <sub-events>
-                        <comment>parametros: up, down, left right, atack, def, pos_inix, pos_iniy, hero_type, team</comment>
+                        <comment>parametros: (1)up, (2)down, (3)left, (4)right, (5)atack, (6)def, (7)pos_inix, (8)pos_iniy, (9)hero_type, (10)team</comment>
                         <event-block sid="3947598774858576">
                             <conditions>
                                 <condition id="0" name="On function" sid="7335709975286181" type="Function">
@@ -1442,7 +1450,7 @@
                                         <condition id="-8" name="Compare two values" sid="409920920200435" type="System">
                                             <param id="0" name="First value">Function.Param(8)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">1</param>
+                                            <param id="2" name="Second value">&quot;OrangeGuy&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1452,10 +1460,6 @@
                                             <param id="2" name="X">Function.Param(6)</param>
                                             <param id="3" name="Y">Function.Param(7)</param>
                                         </action>
-                                        <action disabled="1" id="0" name="Call function" sid="2135124830297354" type="Function">
-                                            <param id="0" name="Name">&quot;equipWeapon&quot;</param>
-                                            <param id="1" name="Parameter {n}">0{###}hero1.UID</param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="8058671879822246">
@@ -1463,7 +1467,7 @@
                                         <condition id="-8" name="Compare two values" sid="3402401309913747" type="System">
                                             <param id="0" name="First value">Function.Param(8)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">2</param>
+                                            <param id="2" name="Second value">&quot;AnotherGuy&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -2286,21 +2290,27 @@
                                 </event-block>
                                 <event-block sid="9041786353564981">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="1230116191823936" type="body">
-                                            <param id="0" name="Instance variable">MP</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
                                         <condition id="-8" name="Compare two values" sid="1471991000307414" type="System">
-                                            <param id="0" name="First value">body.MP + body.MP_Reg</param>
+                                            <param id="0" name="First value">body.MP + body.MP_Reg* (1 - (body.HP/body.HP_Max ))</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Second value">body.MP_Max</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-11" name="Add to" sid="6485093076362871" type="body">
+                                        <action id="-11" name="Add to" sid="7501707124948162" type="body">
                                             <param id="0" name="Instance variable">MP</param>
-                                            <param id="1" name="Value">body.MP_Max * (body.MP_Reg / 100)</param>
+                                            <param id="1" name="Value">body.MP_Reg* (1 - (body.HP/body.HP_Max ))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8495359394395954">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5944551491523058" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="7740940621721933" type="body">
+                                            <param id="0" name="Instance variable">MP</param>
+                                            <param id="1" name="Value">body.MP_Max</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2354,6 +2364,104 @@
                             <param id="1" name="Mode">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9303797945047569">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3941762366666618" type="System">
+                                    <param id="0" name="First value">body.team</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5438840620195813" type="System">
+                                    <param id="0" name="Object to create">PlayerTag</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1093404404049931" type="PlayerTag">
+                                    <param id="0" name="Text">&quot;P&quot;&amp;custom_id_count</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="6197158581030635" type="PlayerTag">
+                                    <param id="0" name="Object">body</param>
+                                    <param id="1" name="Image point (optional)">2</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="5950213793092217" type="PlayerTag">
+                                    <param id="0" name="Y">Self.Y - 10</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="45018763312794" type="PlayerTag">
+                                    <param id="0" name="X">Self.X- 5</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="9840862610465814" type="PlayerTag">
+                                    <param id="0" name="Pin to">body</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="778791834711255">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7936469280393213" type="System">
+                                            <param id="0" name="First value">body.team</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="822200352420527" type="PlayerTag">
+                                            <param id="0" name="Color">rgb(255,0,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7224275643676882">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="2601400769983236" type="System">
+                                            <param id="0" name="First value">body.team</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="1965865167342071" type="PlayerTag">
+                                            <param id="0" name="Color">rgb(0,0,255)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="587053464920461">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="4270834323981947" type="System">
+                                            <param id="0" name="First value">body.team</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="2499224055701331" type="PlayerTag">
+                                            <param id="0" name="Color">rgb(100,100,255)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2819056085673036">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="2477520223469918" type="System">
+                                            <param id="0" name="First value">body.team</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="8226501700576352" type="PlayerTag">
+                                            <param id="0" name="Color">rgb(0,255,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9677007543520665">
+                                    <conditions />
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7964476497777602">
                     <conditions>

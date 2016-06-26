@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ControlSetup</name>
+    <events>
+        <variable constant="0" name="index" sid="7389208416844882" static="0" type="number">1</variable>
+        <variable constant="0" name="set_keyboard" sid="8467288077731107" static="0" type="number">0</variable>
+        <event-group description="" sid="2145320046944854" title="Keyboard">
+            <sub-events>
+                <event-block sid="1458215538298925">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="121601752801651" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6797907785746417" type="Function">
+                            <param id="0" name="Name">&quot;updateKeyboard&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3734145886362062">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="9238513489324373" type="MenuButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9530790169670581" type="System">
+                            <param id="0" name="Layout">Menu</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4294011937777182">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="1013624635152448" type="System">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Expression">Text.key</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="3844907262115236" type="Text">
+                                    <param id="0" name="Color">rgb(0, 0, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3180003246040024">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="7795312108938975" type="Button" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1994725343204284" type="System">
+                            <param id="0" name="Variable">set_keyboard</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="5472839303564961" type="Audio">
+                            <param id="0" name="Audio file">Game_Menu_Click_02</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="8" name="Set unfocused" sid="6474154608554862" type="Button" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4301676151491434">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="4341186730197678" type="System">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Expression">Text.key</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="6792730852624088" type="Text">
+                                    <param id="0" name="Color">rgb(0, 0, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3154620995103086">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="6638791535573597" type="Keyboard" />
+                        <condition id="-8" name="Compare two values" sid="4217067299568611" type="System">
+                            <param id="0" name="First value">set_keyboard</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="2587275878845914" type="System">
+                            <param id="0" name="First value">set_keyboard</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="1981487227393194" type="Audio">
+                            <param id="0" name="Audio file">Game_Menu_Click_02</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="4323447909587599" type="Dictionary">
+                            <param id="0" name="Key">&quot;keyboard_&quot;&amp;PlayerList.SelectedText&amp;&quot;_&quot;&amp;set_keyboard</param>
+                            <param id="1" name="Value">Keyboard.LastKeyCode</param>
+                        </action>
+                        <action id="0" name="Call function" sid="8719428005416163" type="Function">
+                            <param id="0" name="Name">&quot;updateKeyboard&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3447303225031311">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="8953969405632807" type="System">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Expression">Text.key</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">set_keyboard + 1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="6099040620980776" type="Text">
+                                    <param id="0" name="Color">rgb(0, 0, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9860563236530434">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="4679104699041767" type="System">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Expression">Text.key</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">set_keyboard</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="3122119627497271" type="Text">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5490897647917161">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Add to" sid="6011922708442842" type="System">
+                                    <param id="0" name="Variable">set_keyboard</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set item" sid="8049019589494104" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;keyboard&quot;</param>
+                                    <param id="1" name="Value">Dictionary.AsJSON</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7602324925491276">
+                    <conditions>
+                        <condition id="1" name="On selection changed" sid="2649635296993028" type="PlayerList" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="8263796848946717" type="Function">
+                            <param id="0" name="Name">&quot;updateKeyboard&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="9008304678421671">
+            <conditions>
+                <condition id="0" name="On function" sid="4138105572188336" type="Function">
+                    <param id="0" name="Name">&quot;updateKeyboard&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4284875191270259">
+                    <conditions>
+                        <condition id="-10" name="For" sid="7039216434206822" type="System">
+                            <param id="0" name="Name">&quot;keyboard&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">6</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7981463786597359">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="850512077643086" type="System">
+                                    <param id="0" name="Object">Control</param>
+                                    <param id="1" name="Expression">control.key</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="2122531808199031" type="Control">
+                                    <param id="0" name="Text">Keyboard.StringFromKeyCode(Dictionary.Get(&quot;keyboard_&quot;&amp;PlayerList.SelectedText&amp;&quot;_&quot;&amp;loopindex))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
